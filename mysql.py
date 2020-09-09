@@ -12,10 +12,7 @@ from sklearn.svm import SVC
 import numpy as np
 import json
 import random
-num1 = random.randint(-1, 0)
-num2 = random.randint(1, 10)
-num3 = random.randint(50, 500)
-num4 = random.randint(0, 8)
+
 
 
 
@@ -123,6 +120,10 @@ def Neighbors():
 def Neighborspredict():
     title = request.get_json()
     print(title['Name'])
+    num1 = random.randint(-1, 0)
+    num2 = random.randint(1, 10)
+    num3 = random.randint(50, 500)
+    num4 = random.randint(0, 8)
     myCsvRow='Name'+','+''+','+str(num2)+','+'612.75,2,4' + ','+str(num2)+','+','+str(num2)+','+str(title['Name'])+',1 1 1 0 0 0 0 1 1 0,0'
     with open('predict.csv','a') as fd:
       fd.write("\n"+myCsvRow)
@@ -177,10 +178,15 @@ def Neighbors2():
     print(Tests[len(Tests)-1])
     return Accuracy_test
 
-
+@app.route('/api/svm2', methods=['GET'])
+def svm2():
     title = request.get_json()
     print(title['Name'])
-    myCsvRow=str(title['Name'])+','+str(title['ESOL'])+',2,'+str(title['Weight'])+','+str(title['HBond'])+','+str(title['Rings'])+','+str(title['Rotatable'])+',,,'
+    num1 = random.randint(-1, 0)
+    num2 = random.randint(1, 10)
+    num3 = random.randint(50, 500)
+    num4 = random.randint(0, 8)
+    myCsvRow='Name'+','+''+','+str(num2)+','+'612.75,2,4' + ','+str(num2)+','+','+str(num2)+','+str(title['Name'])+',1 1 1 0 0 0 0 1 1 0,0'
     with open('predict.csv','a') as fd:
       fd.write("\n"+myCsvRow)
     Tests = []
@@ -273,6 +279,10 @@ def add_ta():
 def Arbrepredict():
     title = request.get_json()
     print(title['Name'])
+    num1 = random.randint(-1, 0)
+    num2 = random.randint(1, 10)
+    num3 = random.randint(50, 500)
+    num4 = random.randint(0, 8)
     myCsvRow='Name'+','+''+','+str(num2)+','+'612.75,2,4' + ','+str(num2)+','+','+str(num2)+','+str(title['Name'])+',1 1 1 0 0 0 0 1 1 0,0'
     with open('predict.csv','a') as fd:
       fd.write("\n"+myCsvRow)
